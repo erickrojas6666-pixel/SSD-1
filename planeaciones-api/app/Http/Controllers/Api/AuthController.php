@@ -144,7 +144,7 @@ class AuthController extends Controller
     {
         try {
             $request->validate(['email' => ['required', 'email']]);
-            app()->setLocale('es');
+            app()->setLocale('es'); 
             Password::sendResetLink($request->only('email'));
 
             return response()->json(['message' => 'Si el correo está registrado, se envió un enlace de recuperación.']);
